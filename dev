@@ -1,0 +1,11 @@
+{
+    "application_properties": {
+        "APPCODE": "egkc",
+        "APP_NAME": "egkc-compass",
+        "REGISTRY_URL": "escoacrprod01.azurecr.io",
+        "NAMESPACE": "egkc-dev",
+        "HELM_NAME": "helmcharts",
+        "VALUES_PATH": "helmcharts/env/dev/egkc-compass/values.yaml",
+        "CONFIG_PATH": "env/dev/egkc-compass/configmap.yaml"
+    }
+}

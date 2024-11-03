@@ -1,0 +1,7 @@
+{
+	"application_properties": {
+    "APPCODE": "egkc",
+	"APP_NAME": "egkc-compass",
+	"REGISTRY_URL": "escoacrprod01.azurecr.io"	
+	}
+}
