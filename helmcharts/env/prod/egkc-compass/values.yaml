@@ -1,0 +1,207 @@
+# Default values for test.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+app:
+  resources:
+    limits:
+      cpu: "1"
+      memory: "1000Mi"
+    requests:
+      cpu: "1"
+      memory: "1000Mi"
+  configFile: "env/prod/egkc-compass/configmap.yaml"
+  ConfigMapEntry:
+    enable: true
+  announcementdataConfigMap:
+    enabled: true
+  persistentVolume:
+    enable: false
+  persistentVolumeClaim:
+    enable: false
+  persistentVolumeCSI:
+    enable: true
+  persistentVolumeClaimCSI:
+    enable: true
+    accessModes:
+      - ReadWriteOnce
+    annotations: {}
+    existingClaim: ""
+    mountPath: /home/egkc/compass
+    mountPathSubPath: compass
+    size: 1Gi
+    # mountPathJsonFiles: /app/src/data-json
+    # mountPathJsonFilesSubPath: data-json
+  fileshare:
+    fileShareName: egkc-compass-prod
+    resourcegroup: az-core-prod-01-egkc-prod-westus-rg-01
+  micrometer:
+    enable: false
+  # Monitoring Disabled
+  appDynamics:
+    enable: false
+  egressSvcEntry:
+    enabled: true
+  appcode: egkc
+  labels:
+    app: egkc-compass
+    costcenter: 9901-710
+    project: egkc
+    portfolio: DeveloperEnablement
+    appcode: egkc
+    environment: prod
+    drcategory: dr3
+    appname: egkc-compass
+  containers:
+    image: egkc-compass
+    appName: egkc-compass
+    envCode: prod
+    port: 3000
+    readinessEndpoint: /compass
+    livenessEndpoint: /compass
+    initialDelaySeconds_ready: 180
+    timeoutSeconds_ready: 15
+    periodSeconds_ready: 10
+    successThreshold_ready: 1
+    failureThreshold_ready: 5
+    initialDelaySeconds_live: 180
+    timeoutSeconds_live: 15
+    periodSeconds_live: 10
+    successThreshold_live: 1
+    failureThreshold_live: 5
+  certs: true
+  akvCertSecretName: egkc-prod-westus-aks-az-albertsons-com
+  # akvScSecret: esghgheprodst01-sc
+  AKVSecretsStorageAccount:
+    AKVSecretName: egkc-compass-storage-account
+    StorageAccountSecretNameForPod: egkc-compass-storage-account
+    secretKeyName: azurestorageaccountkey
+    secretAccountName: azurestorageaccountname
+    storageAccountKey: egkc-compass-prod-storage-account-key
+    storageAccountName: egkc-compass-prod-storage-account-name
+    FileshareName: egkc-compass-prod
+  # envConf: false
+  # uienvConf: true
+  ingress:
+    annotations: {}
+      # kubernetes.io/ingress.class: nginx
+      # kubernetes.io/tls-acme: "true"
+    certName: egkc-prod-westus-aks-az-albertsons-com
+    selector:
+      istio: ingressgateway
+    host:
+      - "egkc.prod.westus.aks.az.albertsons.com"
+    virtualServiceName: egkc-compass-vs
+    destinationRuleName: egkc-compass-dr
+    portNumber: 3000
+    http:
+    - match:
+      - uri:
+          prefix: /compass
+      - uri:
+          prefix: /static
+      - uri:
+          prefix: /svg
+      - uri:
+          prefix: /icons-images
+    tls: []
+    istio:
+      namespace: istio-system
+
+  autoscaleEnabled: false
+  akvVault: egkc-prod-wu-kv-01
+  # network policy rules enable flag
+  networkPolicy:
+    enabled: false
+service:
+  type: ClusterIP
+  port: 3000
+  portName: http-egkc-compass
+  targetPort: 3000
+  annotations: {}
+  labels:
+    app: egkc-compass
+    # costcenter: 9901-710
+    project: egkc
+    # portfolio: prodeloperEnablement
+    # appcode: egkc
+    # environment: prod
+    # drcategory: dr3
+    # appname: egkc-compass
+configfile: ""
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+egressSvcEntry:
+  host: egkc.prod.westus.aks.az.albertsons.com
+  portNumber: 443
+  protocol: HTTPS
+  portName: https-egkc-compass
+
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+podAnnotations: {}
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+secrets: []
+
+global:
+  ingress:
+    enabled: true
+    only: false
+    gatewayName: egkc-orchestrator-gateway
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+
+    tls: [] 
+  securityContext:
+    enabled: true
+    runAsUser: 1999
+    runAsGroup: 1999
+    fsGroup: 1999
+    supplementalGroups: 1999

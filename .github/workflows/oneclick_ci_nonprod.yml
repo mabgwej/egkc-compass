@@ -1,0 +1,32 @@
+name: oneclick-ci-nonprod
+on:
+  workflow_dispatch:
+
+jobs:
+  Extract_branch:
+    uses: albertsons/esgh-central-workflow-aks/.github/workflows/extractbranch.yml@v2
+  call-ci-workflow:
+    needs: [Extract_branch]
+    uses: albertsons/esgh-central-workflow-aks/.github/workflows/oneclick-node-ci-nonprod.yml@v4
+    with:
+      ACTIONSFILE: "Actionsfile/dev"
+      TAG: ${{ github.ref_name }}-${{ github.run_number }}
+      branch_name: "${{ needs.Extract_branch.outputs.branch_name }}"
+      VERACODE_APPNAME: egkc-compass
+      tar_command: tar -czvf node_modules.tar.gz node_modules
+      npm_sonar_command: npm install && npm run test && npm run coverage
+      npm_install_command: npm install && npm run build
+      untar_command: tar -xvzf node_modules.tar.gz
+      npm_build_command: npm install && npm run build
+      node_version: 20
+    secrets:
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+      TL_USERNAME: ${{ secrets.TL_USERNAME }}
+      TL_PASSWORD: ${{ secrets.TL_PASSWORD }}
+      REGISTRY_USER: ${{ secrets.ACR_USER }}
+      REGISTRY_PWD: ${{ secrets.ACR_PWD }} 
+      VERACODEID: ${{ secrets.VERACODEID }}
+      VERACODEKEY: ${{ secrets.VERACODEKEY }}
+      PERSONAL_ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+      SONAR_CONTINUEONERROR_NONPROD: ${{ secrets.SONAR_CONTINUEONERROR_NONPROD }}

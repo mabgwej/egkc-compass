@@ -1,0 +1,41 @@
+name: oneclick_deploy_prod
+
+on:
+  workflow_dispatch:
+    inputs:
+      prod:
+        type: boolean
+        description: 'deploy dev'
+        required: false
+        default: 'true'
+      TAG:
+        type: string
+        description: 'Enter the ARC image tag to push to ACR'
+        required: true
+        default: 'latest'
+
+jobs:
+  Extract_branch:
+    uses: albertsons/esgh-central-workflow-gke/.github/workflows/extractbranch.yml@v3
+  prod-deploy:
+    needs: [Extract_branch]  
+    if: success() && github.event.inputs.prod == 'true'
+    uses: albertsons/esgh-central-workflow-aks/.github/workflows/oneclick-deploy-prod.yml@v3
+    with:
+      ACTIONSFILE: "Actionsfile/prod"
+      TAG: ${{ github.event.inputs.TAG }}
+    secrets:
+      REGISTRY_USER: ${{ secrets.ACR_USER }}
+      REGISTRY_PWD: ${{ secrets.ACR_PWD }}
+      KUBECONFIG: ${{ secrets.ESCO_AKSSHARED_PROD_WESTUS_CLUSTER_01 }}
+      PERSONAL_ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+
+  Deploy-Status-check-prod:
+    needs: [ prod-deploy ]
+    if: success() && github.event.inputs.prod == 'true'
+    uses: albertsons/esgh-central-workflow-aks/.github/workflows/Deploy-Status-check.yml@v4
+    with:
+      ACTIONSFILE: "Actionsfile/prod"
+    secrets:
+      KUBECONFIG: ${{ secrets.ESCO_AKSSHARED_PROD_WESTUS_CLUSTER_01 }}
+      PERSONAL_ACCESS_TOKEN : ${{ secrets.PERSONAL_ACCESS_TOKEN }}

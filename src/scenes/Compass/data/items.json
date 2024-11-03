@@ -1,0 +1,448 @@
+[
+    {
+        "key": 1,
+        "name": "Developer Enablement Tools",
+        "icon": "github.png",
+        "toolTip": " A curated collection of tools and resources designed to accelerate development workflows, enhance productivity, and foster innovation among developers. This section includes access to  code repositories, documentation, and best practices for seamless software development.",
+        "itemListOne": [
+            {
+                "key": 1,
+                "name": "GitHub",
+                "toolTip": "GitHub is a platform for code hosting and collaboration, enabling developers to work on projects globally.",
+                "itemListTwo": [
+                    {
+                        "key": 1,
+                        "name": "Contributions",
+                        "URL": "https://devops-dashboard.albertsons.com/Activity",
+                        "toolTip": "GitHub Contributions represent a user's activity on GitHub, including commits, pull requests, and issues raised in a repository."
+                    },
+                    {
+                        "key": 2,
+                        "name": "Deployments",
+                        "URL": "https://devops-dashboard.albertsons.com/GHARepository",
+                        "toolTip": "GitHub Deployments is a feature that automates, tracks, and coordinates deployments directly from a repository."
+                    },
+                    {
+                        "key": 3,
+                        "name": "Self-Service Tools",
+                        "URL": "https://devops-dashboard.albertsons.com/GHATools",
+                        "toolTip": "GitHub Deployments is a feature that automates, tracks, and coordinates deployments directly from a repository."
+                    },
+                    {
+                        "key": 4,
+                        "name": "Performance",
+                        "URL": "https://devops-dashboard.albertsons.com/Performance",
+                        "toolTip": "GitHub Performance refers to the efficiency and speed of GitHub's services, including repository operations, pull requests, and issue tracking."
+                    },
+                    {
+                        "key": 5,
+                        "name": "Workflow Activity",
+                        "URL": "https://devops-dashboard.albertsons.com/WorkflowActivity",
+                        "toolTip": "GitHub Workflow Activity refers to the actions and operations performed within a GitHub Actions workflow, such as runs, jobs, and steps."
+                    },
+                    {
+                        "key": 6,
+                        "name": "Repositories With Secrets",
+                        "URL": "https://devops-dashboard.albertsons.com/RepoSecret",
+                        "toolTip": "GitHub Repositories With Secrets refers to repositories that have sensitive data, like API keys or passwords, stored securely."
+                    }
+                ]
+            },
+            {
+                "key": 2,
+                "name": "GitHub Copilot",
+                "URL": "https://devops-dashboard.albertsons.com/CopilotUsers",
+                "toolTip": "GitHub Copilot is an AI-powered code assistant that helps developers write code faster by suggesting lines or blocks of code."
+            },
+            {
+                "key": 3,
+                "name": "Veracode",
+                "toolTip": "Veracode is a cloud-based service that provides automated security testing for web, mobile, and third-party enterprise applications.",
+                "itemListTwo": [
+                    {
+                        "key": 1,
+                        "name": "Veracode Platform Scan",
+                        "URL": "https://devops-dashboard.albertsons.com/Veracode",
+                        "toolTip": "Veracode Platform Scan is a comprehensive security analysis tool that identifies vulnerabilities in applications across multiple programming languages and frameworks."
+                    },
+                    {
+                        "key": 2,
+                        "name": "Veracode Exemption",
+                        "URL": "https://devops-dashboard.albertsons.com/VeracodeExemptions",
+                        "toolTip": "Veracode Exemption allows users to mark specific vulnerabilities as acceptable, delaying or bypassing the need for immediate remediation."
+                    },
+                    {
+                        "key": 3,
+                        "name": "Veracode CVE",
+                        "toolTip": "Veracode CVE provides information on Common Vulnerabilities and Exposures (CVEs) to help identify and address security flaws in software.",
+                        "URL": ""
+                    }
+                ]
+            },
+            {
+                "key": 4,
+                "name": "SonarQube",
+                "toolTip": "SonarQube is a platform for continuous inspection of code quality to perform automatic reviews and detect bugs, code smells, and security vulnerabilities.",
+                "itemListTwo": [
+                    {
+                        "key": 1,
+                        "name": "SonarQube Reports",
+                        "URL": "https://devops-dashboard.albertsons.com/SonarQube",
+                        "toolTip": "SonarQube Reports provide detailed analyses of code quality, highlighting issues such as bugs, vulnerabilities, and code smells to help improve overall software health."
+                    },
+                    {
+                        "key": 2,
+                        "name": "SonarQube Exemption",
+                        "URL": "https://devops-dashboard.albertsons.com/SonarQubeExemptions",
+                        "toolTip": "SonarQube Exemption allows users to exclude specific issues from analysis results, marking them as acceptable and not requiring immediate resolution."
+                    }
+                ]
+            },
+            {
+                "key": 5,
+                "name": "Jfrog Artifactory",
+                "toolTip": "JFrog Artifactory is a universal repository manager that supports multiple package formats, enabling DevOps teams to manage and automate the lifecycle of binary artifacts.",
+                "itemListThree": 1,
+                "URL": "https://devops-dashboard.albertsons.com/Artifactory"
+            },
+            {
+                "key": 6,
+                "name": "Jira",
+                "toolTip": "Jira is a project management and issue tracking tool designed for agile software development, helping teams plan, track, and manage software projects efficiently.",
+                "URL": "https://jira.safeway.com/"
+            },
+            {
+                "key": 7,
+                "name": "Confluence",
+                "toolTip": "Confluence is a collaborative workspace where teams can create, share, and manage project documentation, meeting notes, and knowledge bases.",
+                "URL": "https://confluence.safeway.com/"
+            }
+        ]
+    },
+    {
+        "key": 2,
+        "name": "KPI Reports",
+        "icon": "jira.png",
+        "toolTip": "Comprehensive dashboard providing insights into key performance indicators across various departments, enabling data-driven decision making and performance optimization.",
+        "itemListOne": [
+            {
+                "key": 1,
+                "name": "Jira",
+                "toolTip": "Jira is a project management and issue tracking tool designed for agile software development, helping teams plan, track, and manage software projects efficiently.",
+                "itemListTwo": [
+                    {
+                        "key": 1,
+                        "name": "User Activity",
+                        "URL": "https://devops-dashboard.albertsons.com/JiraActivity",
+                        "toolTip": "User Activity tracks and analyzes the actions and behaviors of users within a system or platform, providing insights into engagement and usage patterns."
+                    },
+                    {
+                        "key": 2,
+                        "name": "Team Activity",
+                        "URL": "https://devops-dashboard.albertsons.com/TeamActivity",
+                        "toolTip": "Team Activity tracks and analyzes the collective actions, progress, and collaboration efforts of a group or team within a project or organization."
+                    },
+                    {
+                        "key": 3,
+                        "name": "Sprint Activity",
+                        "URL": "https://devops-dashboard.albertsons.com/SprintActivity",
+                        "toolTip": "Sprint Activity monitors and evaluates the progress, tasks, and outcomes of a specific sprint within an agile development framework, helping teams track their performance and achieve sprint goals."
+                    },
+                    {
+                        "key": 4,
+                        "name": "Kanban Activity",
+                        "URL": "https://devops-dashboard.albertsons.com/KanbanBoards",
+                        "toolTip": "Kanban Activity tracks and visualizes the flow of work items through different stages of a Kanban board, enabling teams to manage tasks efficiently and optimize their workflow."
+                    }
+                ]
+            },
+            {
+                "key": 2,
+                "name": "GitHub",
+                "toolTip": "GitHub is a platform for code hosting and collaboration, enabling developers to work on projects globally.",
+                "itemListTwo": [
+                    {
+                        "key": 1,
+                        "name": "Repo Activity",
+                        "URL": "https://devops-dashboard.albertsons.com/GHARepository",
+                        "toolTip": "Repo Activity refers to the actions, changes, and updates that occur within a code repository, including commits, pull requests, issues, and releases, providing insights into project development progress."
+                    },
+                    {
+                        "key": 2,
+                        "name": "User Activity",
+                        "URL": "https://devops-dashboard.albertsons.com/Activity",
+                        "toolTip": "User Activity tracks and analyzes the actions and behaviors of users within a system or platform, providing insights into engagement and usage patterns."
+                    }
+                ]
+            },
+            {
+                "key": 3,
+                "name": "Service Now",
+                "URL": "https://devops-dashboard.albertsons.com/SNOWHistory",
+                "toolTip": "The ServiceNow portal is a centralized platform that streamlines and automates IT service management processes, allowing users to request services, report issues, and access IT resources efficiently."
+            }
+        ]
+    },
+    {
+        "key": 3,
+        "name": "Developer & DevOps",
+        "name2": "Self Service",
+        "icon": "githubactions.png",
+        "URL": "https://devops-dashboard.albertsons.com/GHATools",
+        "toolTip": "Visual interface that allows you to access automaed workflow in a user-friendly manner, without the need for technical support or programming skill",
+        "itemListOne": []
+    },
+    {
+        "key": 4,
+        "name": "Cloud Core",
+        "icon": "cloudenv.png",
+        "toolTip": "Self-Service capabilities for automated provisioning and management of Cloud Services and Environments.",
+        "itemListOne": [
+            {
+                "key": 1,
+                "name": "Solution Review",
+                "URL": "https://devportal.albertsons.com/solutionreview",
+                "toolTip": "Align with architectural best practices and meet the necessary criteria."
+            },
+            {
+                "key": 2,
+                "name": "Manage Environments",
+                "URL": "https://devportal.albertsons.com/manageenvs",
+                "toolTip": "Manage, provision new and update existing cloud resources, or address non-compliance issues."
+            },
+            {
+                "key": 3,
+                "name": "Reports",
+                "URL": "https://devportal.albertsons.com/reports",
+                "toolTip": "Comprehensive view of environment management, resource provisioning, and solution reviews requests."
+            }
+        ]
+    },
+   
+    {
+        "key": 5,
+        "name": "Automation Portal",
+        "icon": "automation.png",
+        "toolTip": "for IA operations and KPIs, along with self-service portal access for on demand IOT control",
+        "itemListOne": [
+            {
+                "key": 1,
+                "name": "EIOT Config Portal ",
+                "URL": "https://eiot-portal.albertsons.com/admin/device-management/assets",
+                "toolTip": " One stop shop for IOT device management, onboarding, suppression, and logging.  Audience is IT Ops Support"
+            },
+            {
+                "key": 2,
+                "name": "EIOT Launch Site",
+                "URL": "https://app.powerbi.com/groups/909271be-04c0-4c4b-afec-3b49407eb2cb/reports/c9b9d7c3-d126-4266-bc2f-fd8775da89b3/ReportSection?experience=power-bi",
+                "toolTip": "Provides access to multiple self-healing and insight dashboards to aid in the operations of our enterprise IOT ecosystem. Audience: IT Ops, IT Ops Leadership, Automation customers."
+            },
+            {
+                "key": 3,
+                "name": "Intelligent Automation KPI Portal",
+                "URL": "https://app.powerbi.com/groups/me/reports/3060a4b1-4e2a-405d-9cb3-9136da375b7c/ReportSection8525ce9862852080ba94?experience=power-bi",
+                "toolTip": " UNDER DEVELOPMENT – Executive KPI portal with comprehensive automation deployment, impact and success reports. Audience: IT Ops Leadership"
+            },
+            {
+                "key": 4,
+                "name": "Intelligent Automation Product Portal ",
+                "URL": "https://confluence.safeway.com/display/DTO/COG+Intelligent+Automation",
+                "toolTip": "Product portal providing product vision, overview, architecture, deployment, and post production support. Audience: Enterprise."
+            }
+        ]
+    },
+    {
+        "key": 6,
+        "name": "Security / Vulnerability",
+        "icon": "security.png",
+        "toolTip": "Dedicated section for monitoring and managing security vulnerabilities across software projects. This includes tracking of potential security threats, vulnerability assessments, and recommendations for mitigation to ensure the integrity and security of the software development lifecycle.",
+        "itemListOne": [
+            {
+                "key": 1,
+                "name": "Secret Management",
+                "URL": "https://devops-dashboard.albertsons.com/RepoSecret",
+                "toolTip": "Secret Management involves securely storing, accessing, and managing sensitive information such as passwords, API keys, and tokens, ensuring confidentiality and minimizing security risks."
+            },
+            {
+                "key": 2,
+                "name": "Veracode Platform Scan",
+                "URL": "https://devops-dashboard.albertsons.com/Veracode",
+                "toolTip": "Veracode Platform Scan conducts comprehensive security assessments on software applications to identify and mitigate vulnerabilities and threats."
+            },
+            {
+                "key": 3,
+                "name": "Veracode Pipeline Scan Exemption",
+                "URL": "https://devops-dashboard.albertsons.com/VeracodeExemptions",
+                "toolTip": "Veracode Pipeline Scan Exemption allows for excluding specific vulnerabilities from automated scans during the software development pipeline, streamlining the assessment process."
+            },
+            {
+                "key": 4,
+                "name": "Veracode Portals",
+                "toolTip": "Veracode Portals are centralized platforms that streamline various aspects of security testing, reporting, and management for software applications.",
+                "itemListTwo": [
+                    {
+                        "key": 1,
+                        "name": "Veracode",
+                        "URL": "https://veracode.albertsons.com",
+                        "toolTip": "Veracode is a cloud-based service that provides automated security testing for web, mobile, and third-party enterprise applications."
+                    },
+                    {
+                        "key": 2,
+                        "name": "Veracode KPI Dashboards",
+                        "toolTip": "Veracode KPI Dashboards offer concise visual representations of key performance indicators (KPIs), providing actionable insights into software security and quality metrics.",
+                        "itemListThree": [
+                            {
+                                "key": 1,
+                                "name": "Veracode Portfolios Dashboards",
+                                "toolTip": "Veracode Portfolios Dashboards provide visual summaries of security assessments and metrics across software portfolios, aiding in strategic decision-making and risk management.",
+                                "itemListFour": [
+                                    {
+                                        "key": 1,
+                                        "name": "Veracode Digital Portfolios Dashboard",
+                                        "toolTip": "Veracode Digital Portfolios Dashboard gives a quick overview of security assessments and metrics across digital assets, aiding in risk management and strategic decision-making.",
+                                        "URL": "https://web.analysiscenter.veracode.com/login/#/login?logout=https:%2F%2Fanalysiscenter.veracode.com%2F%3Floc%3DAnalyticsMyOrgDashboards:dashboardId:20190"
+                                    },
+                                    {
+                                        "key": 2,
+                                        "name": "Veracode Retail Portfolios Dashboard",
+                                        "toolTip": "Veracode Retail Portfolios Dashboard provides a concise overview of security assessments and metrics specific to retail digital assets, facilitating risk management and informed decision-making.",
+                                        "URL": "https://web.analysiscenter.veracode.com/login/#/login?logout=https:%2F%2Fanalysiscenter.veracode.com%2F%3Floc%3DAnalyticsMyOrgDashboards:dashboardId:18981"
+                                    }
+                                ]
+                            },
+                            {
+                                "key": 2,
+                                "name": "Veracode All Portfolios Dashboard",
+                                "toolTip": "Veracode All Portfolios Dashboard offers a comprehensive view of security assessments and metrics across all digital portfolios, enhancing risk management and decision-making capabilities.",
+                                "URL": "https://web.analysiscenter.veracode.com/login/#/login?logout=https:%2F%2Fanalysiscenter.veracode.com%2F%3Floc%3DAnalyticsMyOrgDashboards:dashboardId:18981"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {"key": 5,"name": "Cyber Defense Matrix","URL": "https://devops-dashboard.albertsons.com/CyberDefenseMatrix","toolTip": "Description..." }
+        ]
+    },
+    {
+        "key": 7,
+        "name": "Cloud CoE",
+        "icon": "finOps.png",
+        "toolTip": "A collection of tools and references that help determine cloud costs for business applications, lists non-compliant cloud resources, and ensures application design and development follow approval controls.",
+        "itemListOne": [
+          
+            {
+                "key": 1,
+                "name": "Cloud Governance",
+                
+                "toolTip": "A suite of tools, links, and references supporting the CCoE practice.",
+                "itemListTwo": [
+                    {
+                        "key": 1,
+                        "name": "Cloud Design Governance",
+                        "URL": "https://confluence.safeway.com/display/CG/Cloud+Design+Governance",
+                        "toolTip": "Process which ensures that approval controls for application design, development and deployment are adhered to."
+                    },  {
+                        "key": 2,
+                        "name": "Azure Compliance",
+                        "URL": "https://app.powerbi.com/groups/a8f36b58-4ecf-49b5-932d-d27fc1cacd93/reports/beb529df-6a6c-49f2-92a6-2ab65b13df35/ReportSectionc22b8dab8021a021e085?experience=power-bi",
+                        "toolTip": "Report showing resources that are non-compliant from Azure policies."
+                    },
+                    {
+                        "key": 3,
+                        "name": "GCP Compliance",
+                        "URL": "https://app.powerbi.com/groups/a8f36b58-4ecf-49b5-932d-d27fc1cacd93/reports/beb529df-6a6c-49f2-92a6-2ab65b13df35/24db0e5e3b44c5af464e?experience=power-bi",
+                        "toolTip": "Report showing resources that are non-compliant from GCP policies."
+                    }
+,
+                    {
+                        "key": 4,
+                        "name": "OPA Compliance",
+                        "URL": "https://app.powerbi.com/groups/a8f36b58-4ecf-49b5-932d-d27fc1cacd93/reports/beb529df-6a6c-49f2-92a6-2ab65b13df35/c24d31d1b1577946e172?experience=power-bi",
+                        "toolTip": "Report showing resources that are non-compliant from OPA policies."
+                    },
+                    {
+                        "key": 5,
+                        "name": "AZ Deprecated Services",
+                        "URL": "https://app.powerbi.com/groups/a8f36b58-4ecf-49b5-932d-d27fc1cacd93/reports/beb529df-6a6c-49f2-92a6-2ab65b13df35/7c620fcb527d9e523e96?experience=power-bi",
+                        "toolTip": "Report identifying resources affected by Azure’s retiring services."
+                    },
+                    {
+                        "key": 6,
+                        "name": "TLS Compliance",
+                        "URL": "https://app.powerbi.com/groups/a8f36b58-4ecf-49b5-932d-d27fc1cacd93/reports/beb529df-6a6c-49f2-92a6-2ab65b13df35/7a5671c1d71baad501d5?experience=power-bi",
+                        "toolTip": "Report listing resources using TLS 1.1 and below. These need to be upgraded no later than 31 Aug 2025."
+                    }
+
+
+
+                ]
+            },
+            {
+                "key": 2,
+                "name": "FinOps",
+              
+                "toolTip": "FinOps focuses on optimizing cloud spending by bringing together finance, technology, and business teams to manage costs effectively.",
+                "itemListTwo": [
+                    {
+                        "key": 1,
+                        "name": "Flexera One CCO",
+                        "URL": "https://app.flexera.com/login",
+                        "toolTip": "SaaS platform that offers a unified view of costs across a multi-cloud environment. It also tracks specific spending"
+                    },
+                    {
+                        "key": 2,
+                        "name": "FinOps Cloud Spending & Savings",
+                        "URL": "https://app.powerbi.com/groups/a8f36b58-4ecf-49b5-932d-d27fc1cacd93/reports/beb529df-6a6c-49f2-92a6-2ab65b13df35/ReportSection4cddc4a067469281be71?experience=power-bi",
+                        "toolTip": "Report for clear visualization of cloud costs using data sourced from Flexera One."
+                    },
+                    {
+                        "key": 3,
+                        "name": "FinOps Budget",
+                        "URL": "https://app.powerbi.com/groups/a8f36b58-4ecf-49b5-932d-d27fc1cacd93/reports/beb529df-6a6c-49f2-92a6-2ab65b13df35/00f01641540cc83bd031?experience=power-bi",
+                        "toolTip": "Displays business application’s approved budget versus actual costs by cloud provider and fiscal year period."
+                    }
+,
+                    {
+                        "key": 4,
+                        "name": "SLT Reporting",
+                        "URL": "https://app.powerbi.com/groups/a8f36b58-4ecf-49b5-932d-d27fc1cacd93/reports/beb529df-6a6c-49f2-92a6-2ab65b13df35/585f18f19ab4cf2b0b0e?experience=power-bi",
+                        "toolTip": "Shows cloud costs broken down by portfolio, program, business leaders and IT leaders."
+                    }
+
+
+
+
+                ]
+            }, 
+             {
+                "key": 3,
+                "name": "Asset Management",
+              
+                "toolTip": "Asset Management charged in managing software assets and licenses for efficient utilization.",
+                "itemListTwo": [
+                    {
+                        "key": 1,
+                        "name": "License Reporting",
+                        "URL": "https://app.powerbi.com/groups/me/reports/a003c043-9ce6-408e-b502-d1618c50cc66/585f18f19ab4cf2b0b0e?experience=power-bi",
+                        "toolTip": "Report showing discovered software installations broken down by publisher, license status, license type, license manager and compliance status."
+                    },
+                    {
+                        "key": 2,
+                        "name": "Unlicensed Software",
+                        "URL": "https://app.powerbi.com/groups/me/reports/a003c043-9ce6-408e-b502-d1618c50cc66/599fa54d7c49cdc49682?experience=power-bi",
+                        "toolTip": "Report showing unlicensed software installations."
+                    }
+
+
+
+                ]
+            }
+          
+          
+           
+            
+           
+                   ]
+    }
+    
+]

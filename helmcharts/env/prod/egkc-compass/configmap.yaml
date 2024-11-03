@@ -1,0 +1,2 @@
+###CONFIGURATIONS RELATED TO APPLICATION
+REACT_APP_ANNOUNCEMENT_URL: "https://egkc.prod.westus.aks.az.albertsons.com/announcements"
