@@ -1,0 +1,46 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: {{ .Values.global.ingress.gatewayName }}
+  namespace: {{ .Values.app.namespace }}
+spec:
+  selector:
+  {{- toYaml .Values.app.ingress.selector | nindent 4 }}
+  servers:
+  - port:
+      number: 80
+      name: http
+      protocol: HTTP
+    hosts:
+    {{- toYaml .Values.app.ingress.host | nindent 4 }}
+    tls:
+      httpsRedirect: true
+  - port:
+      name: "https-{{ .Values.global.project }}"
+      number: 443
+      protocol: HTTPS
+    hosts:
+    {{- toYaml .Values.app.ingress.host | nindent 4 }}
+    tls:
+      credentialName: {{ .Values.app.ingress.certName }}
+      mode: SIMPLE
+    
+  
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: {{ .Values.app.ingress.virtualServiceName }}
+  namespace: {{ .Values.app.namespace }}
+spec:
+  hosts:
+  {{- toYaml .Values.app.ingress.host | nindent 2 }}
+  gateways:
+  - {{ .Values.global.ingress.gatewayName }}
+  http:
+    {{- toYaml .Values.app.ingress.http | nindent 2 }}
+    route:
+    - destination:
+        host: "{{ include "esgh.fullname" . }}-svc"
+        port:
+          number: {{ .Values.app.ingress.portNumber }}

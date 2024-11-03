@@ -1,0 +1,15 @@
+{{- if .Values.app.persistentVolumeClaimCSI.enable -}}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ .Values.app.appcode }}-{{ .Release.Name }}-{{ .Values.app.containers.envCode }}-pvc-csi
+  namespace: {{ .Values.app.namespace }}
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: azurefile-csi
+  volumeName: {{ .Values.app.appcode }}-{{ .Release.Name }}-{{ .Values.app.containers.envCode }}-pv-csi
+  resources:
+    requests:
+      storage: {{ .Values.app.persistentVolumeClaimCSI.size }}
+{{- end }}

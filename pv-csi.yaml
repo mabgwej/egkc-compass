@@ -1,0 +1,35 @@
+{{- if .Values.app.persistentVolumeCSI.enable -}}
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  annotations:
+    pv.kubernetes.io/provisioned-by: file.csi.azure.com
+  name: {{ .Values.app.appcode }}-{{ .Release.Name }}-{{ .Values.app.containers.envCode }}-pv-csi
+  namespace: {{ .Values.app.namespace }}
+spec:
+  capacity:
+    storage: {{ .Values.app.persistentVolumeClaimCSI.size }}
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: azurefile-csi
+  csi:
+    driver: file.csi.azure.com
+    readOnly: false
+    volumeHandle: {{ .Values.app.namespace }}-01
+    volumeAttributes:
+      resourceGroup: {{ .Values.app.fileshare.resourcegroup }}
+      shareName: {{ .Values.app.fileshare.fileShareName }}
+    nodeStageSecretRef:
+      name: {{ .Values.app.AKVSecretsStorageAccount.AKVSecretName }}
+      namespace: {{ .Values.app.namespace }}
+  mountOptions:
+  - dir_mode=0777
+  - file_mode=0777
+  - uid=1999
+  - gid=1999
+  - mfsymlinks
+  - cache=strict
+  - nosharesock
+  - nobrl
+{{- end -}}

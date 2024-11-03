@@ -1,0 +1,35 @@
+{{- if .Values.app.egressSvcEntry.enabled }}
+apiVersion: networking.istio.io/v1beta1
+kind: ServiceEntry
+metadata:
+  name: {{ .Release.Name }}-serviceentry
+  namespace: {{ .Values.app.namespace }}
+spec:
+  hosts:
+  - {{ .Values.egressSvcEntry.host }}
+  exportTo:
+  - "."
+  location: MESH_EXTERNAL
+  ports:
+  - name: {{ .Values.egressSvcEntry.portName }}
+    number: {{ .Values.egressSvcEntry.portNumber }}
+    protocol: {{ .Values.egressSvcEntry.protocol }}
+  resolution: NONE
+---
+apiVersion: networking.istio.io/v1beta1
+kind: ServiceEntry
+metadata:
+  name: {{ .Release.Name }}-npm-registry-serviceentry
+  namespace: {{ .Values.app.namespace }}
+spec:
+  hosts:
+  - registry.npmjs.org
+  exportTo:
+  - "."
+  location: MESH_EXTERNAL
+  ports:
+  - name: https
+    number: 443
+    protocol: HTTPS
+  resolution: DNS
+{{- end }}

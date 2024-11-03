@@ -1,0 +1,26 @@
+{{- if .Values.app.persistentVolume.enable -}}
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: {{ .Values.app.appcode }}-{{ .Release.Name }}-{{ .Values.app.containers.envCode }}-pv
+  namespace: {{ .Values.app.namespace }}
+spec:
+  capacity:
+    storage: {{ .Values.app.persistentVolumeClaimCSI.size }}
+  accessModes:
+    - ReadWriteMany
+  azureFile:
+    secretName: {{ .Values.app.AKVSecretsStorageAccount.StorageAccountSecretNameForPod }}
+    secretNamespace: {{ .Values.app.namespace }}
+    shareName: {{ .Values.app.AKVSecretsStorageAccount.FileshareName }}
+    readOnly: false
+  storageClassName: azurefile
+  mountOptions:
+  - dir_mode=0777
+  - file_mode=0777
+  - uid=1999
+  - gid=1999
+  - mfsymlinks
+  - nobrl
+  - cache=none
+{{- end -}}

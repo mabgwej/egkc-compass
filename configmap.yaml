@@ -1,1 +1,13 @@
-REACT_APP_ANNOUNCEMENT_URL: "https://egkc.prod.westus.aks.az.albertsons.com/announcements"
+{{- if.Values.app.ConfigMapEntry.enable -}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-configmap
+  namespace: {{ .Values.app.namespace }}
+  labels:
+{{- include "esgh.labels" . | nindent 4 }}
+data:
+{{- range .Files.Lines .Values.configfile }}
+{{ . | indent 2 }}
+{{- end }}
+{{- end }}
